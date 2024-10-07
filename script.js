@@ -25,25 +25,32 @@
 //     return result
 // }
 
-// let auto = {
-//     brand:"bmw",
-//     model:"x5",
-//     year:2021,
-//     avgSpeed:80,
-//     toString(){
-//         return `
-//             brand:${this.brand},
-//             model:${this.model},
-//             year:${this.year},
-//             avgSpeed:${this.avgSpeed},
-//         `
-//     }
-//     calculateDriveTime(distance){
-//         return distance / this.avgSpeed
-//     }
-// }
+const auto = {
+    brand:"bmw",
+    model:"x5",
+    year:2021,
+    avgSpeed:80,
 
-// alert(auto.calculateDriveTime(240))
+    // toString(){
+    //     return `
+    //         brand:${this.brand},
+    //         model:${this.model},
+    //         year:${this.year},
+    //         avgSpeed:${this.avgSpeed},
+    //     `
+    // }
+   
+    calculateDriveTime(distance) {
+        const speed = this.avgSpeed;
+        let time = distance/speed;
+        const breaks = Math.floor(time/4);
+        time += breaks;
+        return time;
+    }
+}
+const distance=500
+const travelTime = auto.calculateDriveTime(distance)
+alert(`время в пути для преодоленния ${distance} км составит ${travelTime}часов с учетом перерывово`)
 
 // let list = [
 //     {name: "potato",count:3,bought:false,price:50},
